@@ -29,9 +29,32 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('home' ,function(){
-    return '<h1>Home</h1>';
+    return view('client.pages.home');
+})->name('home');
+
+Route::middleware('auth.admin')->name('admin.')->group(function(){
+    Route::get('admin' ,function(){
+        return view('admin.pages.dashboard');
+    })->name('admin');
+    Route::get('admin/user' ,function(){
+        return view('admin.pages.user');
+    })->name('user');
+    Route::get('admin/product' ,function(){
+        return view('admin.pages.product');
+    })->name('product');
+    Route::get('admin/blog' ,function(){
+        return view('admin.pages.blog');
+    })->name('blog');
 });
-Route::get('admin' ,function(){
-    return '<h1>Admin</h1>';
-})->name('admin');
+
+
+
+Route::get('Cocacola' ,function(){
+    return '<h1>CocaCola</h1>';
+})->name('Cocacola');
+Route::get('Chivas' ,function(){
+    return '<h1>Chivas</h1>';
+})->name('Chivas')->middleware('age.18');
+
+
 require __DIR__.'/auth.php';
