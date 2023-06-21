@@ -201,6 +201,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('admin.product_category')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Product Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./admin/user" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
@@ -712,7 +718,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
- 
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>

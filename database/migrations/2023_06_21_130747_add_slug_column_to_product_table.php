@@ -12,10 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('product', function (Blueprint $table) {
-            $table->string('status',255)->default('active');
-        });
-        Schema::table('product_category',function (Blueprint $table){
-            $table->string('status',255)->default('active');
+            $table->string('slug',255)->nullable();
         });
     }
 
@@ -24,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('product_and_product_category', function (Blueprint $table) {
+        Schema::table('product', function (Blueprint $table) {
             //
         });
     }

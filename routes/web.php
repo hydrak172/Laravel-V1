@@ -40,11 +40,20 @@ Route::middleware('auth.admin')->name('admin.')->group(function(){
         return view('admin.pages.user');
     })->name('user');
     Route::get('admin/product' ,function(){
-        return view('admin.pages.product');
+        return view('admin.product.product');
     })->name('product');
+    Route::get('admin/product_category' ,function(){
+        return view('admin.product_category.category');
+    })->name('product_category');
     Route::get('admin/blog' ,function(){
         return view('admin.pages.blog');
     })->name('blog');
+    Route::get('admin/product/create' ,function(){
+        return view('admin.product.create_product');
+    })->name('product.create_product');
+    Route::get('admin/product_category/create' ,function(){
+        return view('admin.product_category.create');
+    })->name('product_category.create');
 });
 
 

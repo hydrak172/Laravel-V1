@@ -15,14 +15,20 @@ return new class extends Migration
             $table->id();
             $table->string('name',255)->nullable();
             $table->float('price')->nullable()->unsigned();
-            $table->text('description')->nullable();
-            $table->string('images_url')->nullable();
-            //tao foreignkey b1
+            $table->float('discount_price')->nullable()->unsigned();
+            $table->text('short_description')->nullable();
+            $table->integer('qty')->unsigned();
+            // tao foreignkey b1
             // $table->bigInteger('product_category_id')->unsigned();
             $table->unsignedBigInteger('product_category_id');
-            //foreign key b2
+            // // //foreign key b2
             $table->foreign('product_category_id')->references('id')->on('product_category');
-
+            $table->string('shipping',512)->nullable();
+            $table->float('weight')->nullable();
+            $table->text('description')->nullable();
+            $table->text('information')->nullable();
+            $table->string('images_url',255)->nullable();
+            $table->string('status',255)->default('active');
             $table->timestamps();
         });
     }
