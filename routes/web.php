@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,9 +43,6 @@ Route::middleware('auth.admin')->name('admin.')->group(function(){
     Route::get('admin/product' ,function(){
         return view('admin.product.product');
     })->name('product');
-    Route::get('admin/product_category' ,function(){
-        return view('admin.product_category.category');
-    })->name('product_category');
     Route::get('admin/blog' ,function(){
         return view('admin.pages.blog');
     })->name('blog');
@@ -54,6 +52,11 @@ Route::middleware('auth.admin')->name('admin.')->group(function(){
     Route::get('admin/product_category/create' ,function(){
         return view('admin.product_category.create');
     })->name('product_category.create');
+    Route::get('admin/product_category' ,function(){
+        return view('admin.product_category.list');
+    })->name('product_category.list');
+    Route::post('admin/product_category/save' ,[ProductCategoryController::class ,'store'])->name('product_category.save');
+    Route::post('admin/product_category/slug',[ProductCategoryController::class,'getSlug'])->name('product_category.slug');
 });
 
 

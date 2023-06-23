@@ -201,7 +201,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.product_category')}}" class="nav-link">
+                <a href="{{ route('admin.product_category.list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product Category</p>
                 </a>
@@ -770,5 +770,7 @@
 <script src="{{ asset('backend/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('backend/dist/js/demo.js')}}"></script>
+
+@yield('js-custom')
 </body>
 </html>
